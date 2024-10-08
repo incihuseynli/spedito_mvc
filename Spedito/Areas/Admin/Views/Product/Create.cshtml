@@ -1,0 +1,65 @@
+﻿@model Product;
+<div class="col-9 grid-margin stretch-card">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create New Product</h4>
+            @*  <p class="card-description">
+            Basic form elements
+            </p> *@
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="@Model.Name">Name</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" asp-for="@Model.Name">
+                    <span class="text text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Description">Description</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Description" asp-for="@Model.Description">
+                    <span class="text text-danger" asp-validation-for="Description"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Price">Price</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Price" asp-for="@Model.Price">
+                    <span class="text text-danger" asp-validation-for="Price"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.InStock">In Stock</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="InStock" asp-for="@Model.InStock">
+                    <span class="text text-danger" asp-validation-for="InStock"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Category">Category</label>
+                    <select>
+                        <option disabled>Choose sizes:</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    <span class="text text-danger"></span>
+                </div>     
+                <div class="form-group">
+                    <label>Sizes</label>
+                    <select>
+                        <option disabled>Choose sizes:</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    <span class="text text-danger"></span>
+                </div>
+
+                @* Image Input *@
+                @*    <div class="form-group">
+                <label asp-for="@Model.File">File upload</label>
+                <div class="input-group col-xs-12">
+                <span class="input-group-append">
+                <input type="file" accept="image/*" class="file-upload-browse btn btn-primary" placeholder="Upload" asp-for="@Model.File">
+                </span>
+                </div>
+                <span class="text text-danger" asp-validation-for="Name"></span>
+                </div> *@
+
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
