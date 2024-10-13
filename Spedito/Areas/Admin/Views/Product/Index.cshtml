@@ -1,4 +1,5 @@
-﻿<div style="width:100%; margin:2rem auto;">
+﻿@model List<Product>
+<div style="width:100%; margin:2rem auto;">
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">All Categories</h4>
@@ -22,18 +23,33 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Name</td>
-                            <td>30$</td>
-                            <td>25</td>
-                            <td>01-01-2024</td>
-                            <td>N/A</td>
-                            <td>
-                                <a href="#">🖊</a>
-                                <a href="#">❌</a>
-                            </td>
-                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Price</td>
+                                <td>@item.InStock</td>
+                                <td>@item.CreatedAt</td>
+                                @if (item.UpdatedAt != null)
+                                {
+                                    <td>@item.UpdatedAt; </td>
+                                }
+                                else
+                                {
+
+                                    <td>N/A</td>
+                                }
+                                <td style="display:flex;align-items:center;gap:1rem;">
+                                    <a asp-controller="product" asp-action="edit" asp-route-id="@item.Id">🖊</a>
+                                    <a asp-controller="product" asp-action="delete" asp-route-id="@item.Id">❌</a>
+                                </td>
+                            </tr>
+                        }
+
+
 
 
 

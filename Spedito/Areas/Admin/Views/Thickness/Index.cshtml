@@ -1,10 +1,11 @@
-﻿@model List<Category>;
+﻿@model List<Thickness>
+
 <div style="width:100%; margin:2rem auto;">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">All Categories</h4>
-            <a asp-controller="category" asp-action="create" class="card-description btn btn-primary" style="color:white; ">
-                Add Category
+            <h4 class="card-title">All Sizes</h4>
+            <a asp-controller="thickness" asp-action="create" class="card-description btn btn-primary" style="color:white; ">
+                Add Thickness
             </a>
             <div class="table-responsive">
                 <table class="table">
@@ -16,7 +17,6 @@
                             <th style="color:black;font-weight:600;">Created At</th>
 
                             <th style="color:black;font-weight:600;">Updated At</th>
-                            <th style="color:black;font-weight:600;">IsMain</th>
 
                             <th style="color:black;font-weight:600;">Actions</th>
                         </tr>
@@ -31,19 +31,18 @@
                                 <td>@item.CreatedAt</td>
                                 @if (item.UpdatedAt != null)
                                 {
-                                    <td>@item.UpdatedAt; </td>
+                                    <td>@item.UpdatedAt</td>
                                 }
                                 else
                                 {
 
                                     <td>N/A</td>
                                 }
-                                <td>@item.Image.IsMain</td>
 
 
                                 <td style="display:flex;align-items:center;gap:1rem;">
-                                    <a asp-controller="category" asp-action="edit" asp-route-id="@item.Id">🖊</a>
-                                    <a asp-controller="category" asp-action="delete" asp-route-id="@item.Id">❌</a>
+                                    <a asp-controller="thickness" asp-action="update" asp-route-id="@item.Id">🖊</a>
+                                    <a asp-controller="thickness" asp-action="delete" asp-route-id="@item.Id">❌</a>
                                 </td>
                             </tr>
                         }

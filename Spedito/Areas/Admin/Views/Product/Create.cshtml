@@ -1,4 +1,4 @@
-﻿@model Product;
+﻿@model ProductViewModel;
 <div class="col-9 grid-margin stretch-card">
     <div asp-validation-summary="ModelOnly"></div>
     <div class="card">
@@ -29,34 +29,75 @@
                     <span class="text text-danger" asp-validation-for="InStock"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="@Model.Category">Category</label>
-                    <select>
-                        <option disabled>Choose sizes:</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
+                    <label asp-for="@Model.CategoryId">Category</label>
+                    <select asp-for="@Model.CategoryId" class="form-control">
+                        <option disabled selected>Choose category:</option>
+                        @foreach (var category in Model.Categories)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
                     </select>
-                    <span class="text text-danger"></span>
-                </div>     
+                    <span class="text text-danger" asp-validation-for="@Model.CategoryId"></span>
+                </div>
                 <div class="form-group">
-                    <label>Sizes</label>
-                    <select>
-                        <option disabled>Choose sizes:</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
+                    <label asp-for="@Model.Sizes">Sizes</label>
+                    <select asp-for="@Model.Sizes" class="form-control" multiple>
+                        @foreach (var size in Model.Sizes)
+                        {
+                            <option value="@size.Id">@size.Name</option>
+                        }
                     </select>
-                    <span class="text text-danger"></span>
+                    <span class="text text-danger" asp-validation-for="@Model.Sizes"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Thicknesses">Thicknesses</label>
+                    <select asp-for="@Model.Thicknesses" class="form-control" multiple>
+                        @foreach (var thickness in Model.Thicknesses)
+                        {
+                            <option value="@thickness.Id">@thickness.Name</option>
+                        }
+                    </select>
+                    <span class="text text-danger" asp-validation-for="@Model.Thicknesses"></span>
+                </div>
+                <div class="form-group" style="position:relative;">
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" onclick="document.getElementById('modalCard').style.display='block'" style="display:flex;align-content:center; gap:.5rem;">
+                        <i class="fa-regular fa-square-plus"></i>
+                        Add Nutritional Values
+                    </button>
+
+                </div>
+                @* Modal *@
+                <div class="card w3-modal-content w3-animate-opacity" id="modalCard" style="display:none;width:70%;position:absolute;top:50%;background-color:lavender;">
+                    <div class="card-body">
+                        <h4 class="card-title">Add Nutritional Values</h4>
+                        <form class="forms-sample" method="post">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                                <span class="text text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Value Details</label>
+                                <textarea class="form-control" id="exampleInputName1" placeholder="Value Details"></textarea>
+                                <span class="text text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2">Submit</button>
+                            <button type="button" onclick="document.getElementById('modalCard').style.display='none'" class="btn btn-primary me-2">Cancel</button>
+                        </form>
+                    </div>
                 </div>
 
                 @* Image Input *@
-                @*    <div class="form-group">
-                <label asp-for="@Model.File">File upload</label>
-                <div class="input-group col-xs-12">
-                <span class="input-group-append">
-                <input type="file" accept="image/*" class="file-upload-browse btn btn-primary" placeholder="Upload" asp-for="@Model.File">
-                </span>
+                <div class="form-group">
+                    <label asp-for="@Model.Files">File upload</label>
+                    <div class="input-group col-xs-12">
+                        <span class="input-group-append">
+                            <input type="file" accept="image/*" class="file-upload-browse btn btn-primary" placeholder="Upload" asp-for="@Model.Files" multiple>
+                        </span>
+                    </div>
+                    <span class="text text-danger" asp-validation-for="Files"></span>
                 </div>
-                <span class="text text-danger" asp-validation-for="Name"></span>
-                </div> *@
 
                 <button type="submit" class="btn btn-primary me-2">Submit</button>
             </form>

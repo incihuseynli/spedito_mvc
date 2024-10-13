@@ -1,0 +1,23 @@
+﻿@model Size;
+<div class="col-9 grid-margin stretch-card">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Size</h4>
+            @*  <p class="card-description">
+            Basic form elements
+            </p> *@
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label asp-for="@Model.Name">Name</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" asp-for="@Model.Name">
+                    <span class="text text-danger" asp-validation-for="Name"></span>
+                </div>
+
+
+
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

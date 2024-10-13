@@ -17,8 +17,11 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="~/admin/assets/css/style.css" />
+
     <!-- endinject -->
     <link rel="shortcut icon" href="~/admin/assets/images/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
     <div class="container-scroller">
@@ -258,6 +261,18 @@
                         <a class="nav-link" asp-controller="product" asp-action="index">
                             <i class="mdi mdi-view-headline menu-icon"></i>
                             <span class="menu-title">Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="size" asp-action="index">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Sizes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="thickness" asp-action="index" asp-area="admin">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Thicknesses</span>
                         </a>
                     </li>
                     <li class="nav-item">

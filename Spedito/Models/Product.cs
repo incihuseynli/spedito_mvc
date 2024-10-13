@@ -11,20 +11,20 @@ namespace Spedito.Models
         public double Price { get; set; }
         public int InStock { get; set; }
         [NotMapped]
-        public IFormFile? File { get; set; }
+        public List<IFormFile>? Files { get; set; }
         // relations
 
-      
-        public List<Size> Sizes { get; set; }
-        public List<Thickness> Thicknesses { get; set; }
-        public List<Ingredient> Ingredients { get; set; }
+
+        public List<Size>? Sizes { get; set; }
+        public List<Thickness>? Thicknesses { get; set; }
+        public List<Ingredient>? Ingredients { get; set; }
 
     
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
 
-        public List<Image> Images { get; set; }
+        public List<Image>? Images { get; set; }
 
-        public List<NutritionalValue> NutritionalValues { get; set; }
+        public List<NutritionalValue>? NutritionalValues { get; set; }
     }
 }

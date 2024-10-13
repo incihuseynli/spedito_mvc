@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spedito", "Spedito\Spedito.csproj", "{7E7D1BB4-43EC-49EF-BFA4-F82989941545}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spedito", "Spedito\Spedito.csproj", "{7E7D1BB4-43EC-49EF-BFA4-F82989941545}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testings", "Testings", "{E827D05F-7C8A-4367-A1D5-19F9B9F081E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileTesting", "FileTesting\FileTesting.csproj", "{281253C6-91CC-4D98-8DEC-527AD3B81CA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{7E7D1BB4-43EC-49EF-BFA4-F82989941545}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E7D1BB4-43EC-49EF-BFA4-F82989941545}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E7D1BB4-43EC-49EF-BFA4-F82989941545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{281253C6-91CC-4D98-8DEC-527AD3B81CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281253C6-91CC-4D98-8DEC-527AD3B81CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281253C6-91CC-4D98-8DEC-527AD3B81CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281253C6-91CC-4D98-8DEC-527AD3B81CA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{281253C6-91CC-4D98-8DEC-527AD3B81CA6} = {E827D05F-7C8A-4367-A1D5-19F9B9F081E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A93B290D-7734-4CDC-84EF-A18563F1A872}

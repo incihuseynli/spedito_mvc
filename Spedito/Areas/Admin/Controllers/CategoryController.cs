@@ -22,7 +22,9 @@ namespace Spedito.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var categories = await _context.Categories.Where(c => !c.isDeleted).ToListAsync();
+            var categories = await _context.Categories
+                .Include(c => c.Image)
+                .Where(c => !c.isDeleted).ToListAsync();
             return View(categories);
         }
         public async Task<IActionResult> Create()
@@ -58,8 +60,8 @@ namespace Spedito.Areas.Admin.Controllers
             }
 
             Image image = new Image();
+            image.IsMain = true;
             image.ImagePath = filename;
-
             category.Image = image;
             await _context.Categories.AddAsync(category);
             await _context.SaveChangesAsync();

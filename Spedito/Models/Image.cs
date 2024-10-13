@@ -9,7 +9,8 @@ namespace Spedito.Models
         // relations
         // add cover for main image
 
-        public bool Cover { get; set; }
+        //public bool Cover { get; set; }
+        public bool IsMain { get; set; }
         public Category? Category { get; set; }
         public Ingredient? Ingredient { get; set; }
         [ForeignKey(nameof(Product))]
